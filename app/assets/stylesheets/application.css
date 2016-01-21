@@ -14,7 +14,23 @@
  *= require_self
  */
 
-.center{
+.form{
+    margin: 0 auto;
+    width: 20%;
+}
+
+.form-content{
+    padding-top: 20px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.errors{
+    padding-top: 20px;
     margin: 0 auto;
     width: 30%;
+}
+
+.alert{
+    padding-left: 20px;
 }
