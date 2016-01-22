@@ -16,7 +16,7 @@
           <p> Username:</br> <%= f.text_field :name%> </p>
           <p> Password:</br> <%= f.password_field :password%></p>
           <p> Password Confirmation:</br> <%= f.password_field :password_confirmation%> </p>
-          <%= f.submit :Signup %>
+          <%= submit_tag("Signup", class: "btn btn-primary") %>
       <% end %>
     </div>
   </div>

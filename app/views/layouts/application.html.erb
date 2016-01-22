@@ -18,9 +18,10 @@
 			</ul>		
 			<%else%>
 			<ul class="nav navbar-nav">
-				<li><%= link_to :Home , :home, class: "nav_links" %> </li>
-				<li><%= link_to :Profile , :profile, class: "nav_links" %> </li>
-				<li><%= link_to :Logout , :logout, class: "nav_links" %></li>	
+				<li><p class="navbar_name">Logged in as <%= @current_user.name %></p></li>
+				<li><%= link_to :Home , :home%> </li>
+				<li><%= link_to :Profile , :profile%> </li>
+				<li><%= link_to :Logout , :logout%></li>	
 			</ul>
 			<% end %>
     </div>
