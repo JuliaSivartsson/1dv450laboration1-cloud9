@@ -1,13 +1,18 @@
 Rails.application.routes.draw do
   
-  root :to => 'sessions#login'
-  get "home", :to => "sessions#home"
+  root 'sessions#login'
+  
+    get "apps" => "apps#new"
+    
+  get "home" => "sessions#home"
+  get "signup" => "users#new"
+  get "login" => "sessions#login"
+  get "logout" => "sessions#logout"
+  get "profile" => "sessions#profile"
+
+  
   get ':controller(/:action(/:id))(.:format)'
   post ':controller(/:action(/:id))(.:format)'
-  get "signup", :to => "users#new"
-  get "login", :to => "sessions#login"
-  get "logout", :to => "sessions#logout"
-  get "profile", :to => "sessions#profile"
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

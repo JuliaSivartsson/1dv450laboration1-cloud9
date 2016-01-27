@@ -1,7 +1,22 @@
 <div class="container">
   <h1 class="text-center">Here is your profile <%=@current_user.name%></h1>
   <p class="text-center">
-      Soon you can apply for API-keys here
+      Here you can apply for API-keys
   </p>
-
+  
+  <div class="col-md-7">
+    <h3>Your applications</h3>
+    <% if @current_user.applications.any? %>
+      <ul>
+        <% @current_user.applications.each do | application | %>
+          <li><%= application.name %>, <%= application.description %></li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>You have no registered applications yet</p>
+    <% end %>
+  </div>
+  <div class="col-md-4 margin-top">
+    <%= link_to :Register , :apps, class: "btn btn-primary"%>
+  </div>
 </div>
