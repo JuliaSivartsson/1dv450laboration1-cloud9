@@ -25,7 +25,7 @@ class AppsController < ApplicationController
     end
     
     def delete_application
-        #Delete application
+        #Delete application WHY DO I GET ERROR?
       @app_to_delete = Application.find(params[:id])
       @app_to_delete.destroy
       render "profile"
