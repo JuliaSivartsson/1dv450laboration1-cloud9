@@ -4,19 +4,34 @@
       Here you can apply for API-keys
   </p>
   
-  <div class="col-md-7">
-    <h3>Your applications</h3>
-    <% if @current_user.applications.any? %>
-      <ul>
-        <% @current_user.applications.each do | application | %>
-          <li><%= application.name %>, <%= application.description %></li>
+    <% if @current_user.name == "admin" %>
+      <div class="col-md-7">
+        <h3>All applications</h3>
+        <% if @applications.any? %>
+          <ul>
+            <% @applications.each do | application | %>
+              <li><%= application.name %>, <%= application.description %>, <%= application.apikey %> <%= link_to "Delete", :controller => :apps, :action => :delete_application, :id => application.id %></li>
+            <% end %>
+          </ul>
+        <% else %>
+          <p>You have no registered applications yet</p>
         <% end %>
-      </ul>
+      </div>
     <% else %>
-      <p>You have no registered applications yet</p>
+      <div class="col-md-7">
+        <h3>Your applications</h3>
+        <% if @current_user.applications.any? %>
+          <ul>
+            <% @current_user.applications.each do | application | %>
+              <li><%= application.name %>, <%= application.description %>, <%= application.apikey %> <%= link_to "Delete", :controller => :apps, :action => :delete_application, :id => application.id %></li>
+            <% end %>
+          </ul>
+        <% else %>
+          <p>You have no registered applications yet</p>
+        <% end %>
+      </div>
+      <div class="col-md-4 margin-top">
+        <%= link_to :Register , :apps, class: "btn btn-primary"%>
     <% end %>
-  </div>
-  <div class="col-md-4 margin-top">
-    <%= link_to :Register , :apps, class: "btn btn-primary"%>
   </div>
 </div>

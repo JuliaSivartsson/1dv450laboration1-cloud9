@@ -27,6 +27,10 @@ class SessionsController < ApplicationController
         #Home view
     end
     
+    def profile
+        @applications = Application.all
+    end
+    
     def logout
       session[:user_id] = nil
       redirect_to :action => 'login'
